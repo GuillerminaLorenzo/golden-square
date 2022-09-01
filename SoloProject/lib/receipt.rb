@@ -1,5 +1,6 @@
 require_relative 'dishes'
 require_relative 'order'
+require_relative 'twilio'
 
 class Recipt
     def initialize(customer, io)
@@ -24,12 +25,12 @@ class Recipt
         "Thank you! Your order was placed and will be delivered before #{time.strftime("%H:%M")}"
     end
 
-    def send_massage(time, customer)
-        delivery_time = time # (40 * 60)
+    def send_massage(time, client)
+        delivery_time = time + (40 * 60)
         client.send_sms(
             to: @customer.phone,
             body: order_message(delivery_time)
         )
-        # @customer.complete_order
+         @customer.complete_order
     end
 end

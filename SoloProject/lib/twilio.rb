@@ -1,6 +1,6 @@
 require 'twilio-ruby'
 
-class Twilio
+class TwilioMessage
     def initialize(client)
         @client = client
     end
