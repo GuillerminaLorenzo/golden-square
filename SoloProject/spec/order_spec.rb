@@ -21,9 +21,9 @@ describe Order do
 
     it "given dishes return total price" do
         customer_1 = Order.new("customer 1", 1234)
-        burguer = double :burguer, price: 13.50
+        burguer = double :burguer, price: 13.5
         customer_1.add_order(burguer, 3)
         result = customer_1.total_price
-        expect(result).to eq 40.50
+        expect(result).to eq 40.5
     end
 end
